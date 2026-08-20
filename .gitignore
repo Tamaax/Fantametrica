@@ -1,0 +1,55 @@
+# File di sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor e IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# File di log
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dipendenze (se usi npm/yarn)
+node_modules/
+package-lock.json
+yarn.lock
+
+# File temporanei
+*.tmp
+*.temp
+*.cache
+*.bak
+
+# File di ambiente e variabili
+.env
+.env.local
+.env.*.local
+
+# File di build (se hai un processo di build)
+/dist/
+/build/
+/out/
+*.min.js
+*.min.css
+
+# File specifici per framework (se usi React, Vue, Angular, ecc.)
+# React
+/build/
+# Vue
+/dist/
+# Angular
+/dist/
+# Svelte
+/build/
+
+# File specifici per GitHub Pages (se non vuoi che vengano pubblicati)
+# .nojekyll (se non vuoi escluderlo, rimuovi questa riga)
