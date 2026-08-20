@@ -11,7 +11,7 @@ Fantametrica è un progetto che ti permette di gestire le quote dei giocatori, v
 
 ## 🚀 Come usare il sito
 Il sito è pubblicato e accessibile a questo indirizzo:
-👉 [https://<tuo-username>.github.io/<nome-repository>/](https://<tuo-username>.github.io/<nome-repository>/)
+👉 (https://tamaax.github.io/Fantametrica/)>/)
 
 ## 🛠️ Tecnologie utilizzate
 - HTML5
