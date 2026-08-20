@@ -22,6 +22,11 @@ Il sito è pubblicato e accessibile a questo indirizzo:
 
 ```
 Fantametrica/
+├── .github/                                   # Configurazioni di GitHub
+│   ├── ISSUE_TEMPLATE/                        # Template per le Issues
+│   │   ├── bug_report.md                      # Modulo per segnalare bug
+│   │   └── feature_request.md                 # Modulo per richiedere funzionalità
+│   └── pull_request_template.md               # Modulo per le Pull Request
 ├── data/                                      # Dati e risorse
 │   ├── attaccanti.js                          # Dati attaccanti
 │   ├── centrocampisti.js                      # Dati centrocampisti
