@@ -60,7 +60,7 @@ Fantametrica/
 Questo progetto è distribuito sotto la licenza MIT. Vedi il file [LICENSE](LICENSE) per maggiori dettagli.
 
 ## 🖼️ Immagini
-Tutte le immagini in questo repository sono © [Tuo Nome] e sono rilasciate sotto licenza [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
+Tutte le immagini in questo repository sono © Tamaax e sono rilasciate sotto licenza [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
 
 ## 🤝 Contribuire
 I contributi sono benvenuti! Per favore, leggi il [CONTRIBUTING](CONTRIBUTING.md) per i dettagli sul nostro codice di condotta e il processo per inviare pull request.
