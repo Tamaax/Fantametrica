@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07070c" />
+  <title>Fantacalcio Pro</title>
+  <link rel="icon" type="image/png" href="img/logo-fantacalcio-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-effects" aria-hidden="true">
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+  </div>
+  
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">
+          <img src="img/logo-fantacalcio-icon.png" alt="Fantacalcio" />
+        </div>
+        <div>
+          <h1>Fantacalcio</h1>
+          <p>Dashboard Pro</p>
+        </div>
+      </div>
+
+      <nav>
+        <button class="nav-btn active" data-view="dashboard">Dashboard</button>
+        <button class="nav-btn" data-view="players">Giocatori</button>
+        <button class="nav-btn" data-view="fasce">Fasce</button>
+        <button class="nav-btn" data-view="watchlist">Watchlist</button>
+        <button class="nav-btn" data-view="credits">Crediti</button>
+        <button class="nav-btn" data-view="auction">Asta</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-logo-card">
+          <img src="img/logo-fantacalcio-light.png" alt="Fantacalcio Serie A" />
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <div class="hero-banner">
+        <img src="img/logo-fantacalcio-banner.png" alt="Fantacalcio Serie A" />
+      </div>
+
+      <header class="topbar">
+        <div>
+          <h2 id="viewTitle">Dashboard</h2>
+          <p id="viewSubtitle">Panoramica rapida del listone</p>
+        </div>
+
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Cerca giocatore o squadra..."
+          autocomplete="off"
+        />
+      </header>
+
+      <section id="view-dashboard" class="view active"></section>
+      <section id="view-players" class="view"></section>
+      <section id="view-fasce" class="view"></section>
+      <section id="view-watchlist" class="view"></section>
+      <section id="view-credits" class="view"></section>
+      <section id="view-auction" class="view"></section>
+      <section id="view-player" class="view"></section>
+    </main>
+  </div>
+    <!-- Pulsante Flottante Aggiungi Giocatore -->
+  <button id="btn-add-player" class="fab-add" title="Aggiungi giocatore" style="display:none;">+</button>
+
+  <!-- Modale (Finestra) per l'inserimento -->
+  <div id="modal-add-player" class="modal-overlay" style="display:none;">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Nuovo Giocatore</h3>
+      <button id="btn-close-modal" class="btn-close" type="button">&times;</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="form-group">
+        <label>Nome *</label>
+        <input type="text" id="new-p-name" placeholder="Es. Rossi">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Ruolo</label>
+          <select id="new-p-role">
+            <option value="P">Portiere (P)</option>
+            <option value="D">Difensore (D)</option>
+            <option value="C" selected>Centrocampista (C)</option>
+            <option value="A">Attaccante (A)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Squadra</label>
+          <input type="text" id="new-p-team" placeholder="Es. Milan">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>QT</label>
+          <input type="number" id="new-p-qt" placeholder="N.D.">
+        </div>
+        <div class="form-group">
+          <label>QT Fanta</label>
+          <input type="number" id="new-p-qt-fanta" placeholder="N.D.">
+        </div>
+        <div class="form-group">
+          <label>QT Gaz.</label>
+          <input type="number" id="new-p-qt-gaz" placeholder="N.D.">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Indice IA</label>
+          <input type="number" id="new-p-ia" placeholder="0-100">
+        </div>
+        <div class="form-group">
+          <label>Fascia</label>
+          <select id="new-p-fascia">
+            <option value="">Calcola da IA</option>
+            <option value="1">1ª</option>
+            <option value="2">2ª</option>
+            <option value="3">3ª</option>
+            <option value="4">4ª</option>
+            <option value="5">5ª</option>
+            <option value="6">6ª</option>
+            <option value="R">R</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Media Voto</label>
+          <input type="number" step="0.01" id="new-p-media-voto" placeholder="N.D.">
+        </div>
+        <div class="form-group">
+          <label>Media Fanta</label>
+          <input type="number" step="0.01" id="new-p-media-fanta" placeholder="N.D.">
+        </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Gol / Gol subiti</label>
+              <input type="number" id="new-p-gol" placeholder="N.D.">
+            </div>
+            <div class="form-group">
+              <label  el>Assist</label>
+              <input type="number" id="new-p-assist" placeholder="N.D.">
+            </div>
+            <div class="form-group">
+              <label>Amm.</label>
+              <input type="number" id="new-p-amm" placeholder="N.D.">
+            </div>
+          </div>
+
+        <div class="form-group">
+          <label>SOS (avversarie)</label>
+          <input type="text" id="new-p-sos" placeholder="Es. Milan Sassuolo Juventus">
+        </div>
+
+        <div class="form-group">
+          <label>Valore / Note</label>
+          <input type="text" id="new-p-valore" placeholder="Es. Titolare, Bonus, Scommessa...">
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="btn-cancel-modal" class="btn" type="button">Annulla</button>
+        <button id="btn-save-player" class="btn primary" type="button">Salva Giocatore</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="data/portieri.js"></script>
+
+  <script src="data/difensori-1.js"></script>
+  <script src="data/difensori-2.js"></script>
+  <script src="data/difensori-3.js"></script>
+  <script src="data/difensori.js"></script>
+
+  <script src="data/centrocampisti-1.js"></script>
+  <script src="data/centrocampisti-2.js"></script>
+  <script src="data/centrocampisti-3.js"></script>
+  <script src="data/centrocampisti.js"></script>
+
+  <script src="data/attaccanti-1.js"></script>
+  <script src="data/attaccanti-2.js"></script>
+  <script src="data/attaccanti.js"></script>
+
+  <script src="data/index.js"></script>
+  <script src="data/updates.js"></script>
+  <script src="apply-updates.js"></script>
+
+  <script src="app.js"></script>
+  <script src="fascia.js"></script>
+  <script src="auction.js"></script>
+  <script src="enhancements.js"></script>
+  <script src="premium.js"></script>
+  <script src="watchlist-filters.js"></script>
+  <script src="fascia-ui.js"></script>
+  <script src="sidebar.js"></script>
+  <script src="add-player.js"></script>
+  <script src="ui-fixes.js"></script>
+  <script src="export-db.js"></script>
+
+  </body>
+</html>
