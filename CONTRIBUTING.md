@@ -3,13 +3,13 @@
 Grazie per il tuo interesse nel contribuire! Segui queste linee guida:
 
 ## 🐛 Segnalare un bug
-1. Vai alla sezione [Issues](https://github.com/tuousername/Fantacalcio/issues)
+1. Vai alla sezione [Issues](https://github.com/Tamaax/Fantametrica/issues)
 2. Clicca su "New Issue"
 3. Scegli il template "Bug Report"
 4. Compila con il massimo dettaglio
 
 ## 💡 Proporre una nuova funzionalità
-1. Vai alla sezione [Issues](https://github.com/tuousername/Fantacalcio/issues)
+1. Vai alla sezione [Issues](https://github.com/Tamaax/Fantametrica/issues)
 2. Clicca su "New Issue"
 3. Scegli il template "Feature Request"
 
