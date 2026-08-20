@@ -19,8 +19,10 @@ Il sito è pubblicato e accessibile a questo indirizzo:
 - JavaScript
 
 ## 📁 Struttura del progetto
+
+```
 Fantacalcio/
-├── index.html          # Pagina principale del sito
+├── index.html          # Pagina principale
 ├── .nojekyll           # Disabilita Jekyll per GitHub Pages
 ├── README.md           # Documentazione del progetto
 ├── LICENSE             # Licenza MIT
@@ -28,10 +30,10 @@ Fantacalcio/
 ├── CODE_OF_CONDUCT.md  # Codice di condotta
 ├── .gitignore          # File esclusi da Git
 ├── css/
-│   └── style.css       # Fogli di stile principali
+│   └── style.css       # Fogli di stile
 ├── js/
-│   └── script.js       # Script JavaScript principali
-├── assets/             # Immagini e risorse statiche
+│   └── script.js       # Script JavaScript
+├── assets/             # Immagini e risorse
 │   ├── logo.png        # Logo del progetto
 │   └── screenshots/    # Screenshot delle funzionalità
 │       ├── statistiche.png
@@ -39,6 +41,7 @@ Fantacalcio/
 │       └── aste.png
 └── docs/               # Documentazione aggiuntiva (opzionale)
     └── guida-utente.md
+```
 
 ## 📝 Licenza
 Questo progetto è distribuito sotto la licenza MIT. Vedi il file [LICENSE](LICENSE) per maggiori dettagli.
