@@ -21,25 +21,38 @@ Il sito è pubblicato e accessibile a questo indirizzo:
 ## 📁 Struttura del progetto
 
 ```
-Fantacalcio/
-├── index.html          # Pagina principale
-├── .nojekyll           # Disabilita Jekyll per GitHub Pages
-├── README.md           # Documentazione del progetto
-├── LICENSE             # Licenza MIT
-├── CONTRIBUTING.md     # Guida per i contributori
-├── CODE_OF_CONDUCT.md  # Codice di condotta
-├── .gitignore          # File esclusi da Git
-├── css/
-│   └── style.css       # Fogli di stile
-├── js/
-│   └── script.js       # Script JavaScript
-├── assets/             # Immagini e risorse
-│   ├── logo.png        # Logo del progetto
-│   └── screenshots/    # Screenshot delle funzionalità
-│       ├── statistiche.png
-│       ├── listone.png
-│       └── aste.png
-└── docs/               # Documentazione aggiuntiva (opzionale)
+Fantametrica/
+├── data/                                      # Dati e risorse
+│   ├── attaccanti.js                          # Dati attaccanti
+│   ├── centrocampisti.js                      # Dati centrocampisti
+│   ├── difensori.js                           # Dati difensori
+│   ├── index.js                               # Raggruppatore dati
+│   ├── portieri.js                            # Dati portieri
+│   └── updates.js                             # Update dati giocatori
+├── img/                                       # Immagini
+│   ├── logo-fantacalcio-banner.png            # Banner del progetto
+│   ├── logo-fantacalcio-icon.png              # Logo del progetto
+│   └── logo-fantacalcio-light.png             # Banner light del progetto
+├── index.html                                 # Pagina principale
+├── README.md                                  # Documentazione del progetto
+├── LICENSE                                    # Licenza MIT
+├── CONTRIBUTING.md                            # Guida per i contributori
+├── CODE_OF_CONDUCT.md                         # Codice di condotta
+├── .gitignore                                 # File esclusi da Git
+├── style.css                                  # Fogli di stile
+├── add-player.js                              # Script JavaScript
+├── app.js                                     # Script JavaScript
+├── apply-updates.js                           # Script JavaScript
+├── auction.js                                 # Script JavaScript
+├── enchancements.js                           # Script JavaScript
+├── export.js                                  # Script JavaScript
+├── fascia-ui.js                               # Script JavaScript
+├── fascia.js                                  # Script JavaScript
+├── premium.js                                 # Script JavaScript
+├── sidebar.js                                 # Script JavaScript
+├── ui-fixes.js                                # Script JavaScript
+├── watchlist-filters.js                       # Script JavaScript
+└── docs/                                      # Documentazione aggiuntiva (opzionale)
     └── guida-utente.md
 ```
 
