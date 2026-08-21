@@ -57,9 +57,7 @@ Fantametrica/
 ├── sidebar.js                                 # Script JavaScript
 ├── state-manager.js                           # Script JavaScript
 ├── ui-fixes.js                                # Script JavaScript
-├── watchlist-filters.js                       # Script JavaScript
-└── docs/                                      # Documentazione aggiuntiva (opzionale)
-    └── guida-utente.md
+└── watchlist-filters.js                       # Script JavaScript
 ```
 
 ## 📝 Licenza
