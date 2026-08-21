@@ -2360,8 +2360,8 @@ body.sidebar-collapsed main {
 /* si rimpiccioliscono, non vanno a capo     */
 /* ========================================= */
 
-/* Tablet (700-992px) */
-@media (max-width: 992px) and (min-width: 700px) {
+/* Tablet (700-1550px) */
+@media (max-width: 1550px) and (min-width: 700px) {
   .player-header {
     flex-wrap: nowrap !important;
     align-items: center !important;
