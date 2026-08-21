@@ -2354,3 +2354,73 @@ body.sidebar-collapsed main {
 .fb-4 { color: #bf5af2; background: rgba(191, 90, 242, 0.12); border-color: rgba(191, 90, 242, 0.35); }
 .fb-5 { color: #ff9f0a; background: rgba(255, 159, 10, 0.12); border-color: rgba(255, 159, 10, 0.35); }
 .fb-6 { color: #9aa6ba; background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.18); }
+
+/* ========================================= */
+/* SCHEDA GIOCATORE: Layout Tablet e Smartphone */
+/* ========================================= */
+@media (max-width: 992px) {
+  
+  /* Contenitore principale: divide in due blocchi */
+  .player-header {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 24px !important;
+    padding: 10px 0 !important;
+  }
+
+  /* BLOCCO SINISTRO: Ruolo, Nome, Squadra, Tenda */
+  .player-title {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    flex: 1 1 300px !important;
+    gap: 4px !important;
+  }
+
+  .player-title .badge {
+    margin-bottom: 4px !important;
+  }
+
+  .player-title h2 {
+    margin: 0 !important;
+    font-size: 26px !important;
+    line-height: 1.2 !important;
+  }
+
+  .player-title p {
+    margin: 0 0 8px 0 !important;
+    font-size: 14px !important;
+    opacity: 0.8;
+  }
+
+  /* Tenda delle fasce: posizionata sotto il nome con un piccolo spazio */
+  .player-title select,
+  .fascia-select {
+    margin-top: 8px !important;
+    width: auto !important;
+    max-width: 160px !important;
+    font-size: 13px !important;
+  }
+
+  /* BLOCCO DESTRO: Pulsanti in colonna */
+  .actions {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 10px !important; /* Spazio tra i pulsanti */
+    flex: 1 1 200px !important;
+  }
+
+  /* Stile uniforme per i pulsanti */
+  .actions .btn {
+    width: auto !important;
+    min-width: 180px !important; /* Li rende della stessa larghezza per allinearli */
+    text-align: left !important;
+    justify-content: flex-start !important;
+    margin: 0 !important;
+  }
+}
