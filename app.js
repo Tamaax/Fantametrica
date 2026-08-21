@@ -533,6 +533,7 @@ function renderPlayer() {
       <div class="card">
         <h3>Prezzo Medio asta 500cr</h3>
         <div class="stat-value">${fmtStat(player.qtGaz)}</div>
+        <div class="stat-label">Prezzo medio</div>
       </div>
 
       <div class="card">
