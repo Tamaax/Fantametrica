@@ -72,4 +72,4 @@ Tutte le immagini in questo repository sono © Tamaax e sono rilasciate sotto li
 I contributi sono benvenuti! Per favore, leggi il [CONTRIBUTING](CONTRIBUTING.md) per i dettagli sul nostro codice di condotta e il processo per inviare pull request.
 
 ## 👤 Autore
-- **Tamaax** - [GitHub](https://github.com/tuousername)
+- **Tamaax** - [GitHub](https://github.com/Tamaax)
