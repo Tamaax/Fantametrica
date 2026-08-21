@@ -2356,125 +2356,185 @@ body.sidebar-collapsed main {
 .fb-6 { color: #9aa6ba; background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.18); }
 
 /* ========================================= */
-/* SCHEDA GIOCATORE: Pulsanti e tendina      */
-/* si rimpiccioliscono, non vanno a capo     */
+/* PC E TABLET (> 680px): Tutto centrato     */
+/* in riga, pulsanti sotto                   */
 /* ========================================= */
-
-/* Tablet (700-1550px) */
-@media (max-width: 1550px) and (min-width: 700px) {
+@media (min-width: 681px) {
+  
+  /* Contenitore principale: due righe */
   .player-header {
+    display: flex !important;
+    flex-direction: column !important; 
+    align-items: center !important;
+    gap: 24px !important;
+    padding: 20px !important;
+  }
+
+  /* RIGA 1: Badge + Nome + Info + Tenda, tutto in riga e centrato */
+  .player-title {
+    display: flex !important;
+    flex-direction: row !important;
     flex-wrap: nowrap !important;
     align-items: center !important;
+    justify-content: center !important; /* TUTTO CENTRATO */
+    width: 100% !important;
     gap: 12px !important;
   }
 
-  .player-title {
-    flex: 1 1 auto !important;
-    min-width: 0 !important;
-  }
-
-  .player-title h2 {
-    font-size: 22px !important;
-  }
-
-  .player-title select,
-  .fascia-select {
-    font-size: 12px !important;
-    padding: 6px 8px !important;
-    max-width: 140px !important;
-  }
-
-  .actions {
-    flex-wrap: nowrap !important;
-    gap: 6px !important;
+  /* Badge attaccato al nome */
+  .player-title > .badge {
+    margin: 0 !important;
     flex-shrink: 0 !important;
   }
 
+  /* Nome e ruolo/squadra in un blocco compatto */
+  .player-title > div {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin: 0 !important;
+  }
+
+  .player-title h2 {
+    font-size: 28px !important;
+    margin: 0 !important;
+  }
+
+  .player-title p {
+    font-size: 14px !important;
+    margin: 0 !important;
+    opacity: 0.8;
+  }
+
+  /* Tenda fascia: attaccata alle info */
+  .player-title select,
+  .fascia-select {
+    margin: 0 !important; 
+    padding: 8px 12px !important;
+    font-size: 14px !important;
+    max-width: 180px !important;
+  }
+
+  /* RIGA 2: Bottoni centrati sotto */
+  .actions {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
   .actions .btn {
-    font-size: 12px !important;
-    padding: 8px 10px !important;
-    white-space: nowrap !important;
-    flex-shrink: 1 !important;
-    min-width: 0 !important;
+    width: auto !important;
+    height: 50px !important;
+    padding: 10px 16px !important;
+    font-size: 14px !important;
   }
 }
 
-/* Smartphone grande (500-699px) */
-@media (max-width: 699px) and (min-width: 500px) {
+/* ========================================= */
+/* SMARTPHONE (< 680px): TUTTO CENTRATO      */
+/* Funziona con la struttura HTML originale  */
+/* ========================================= */
+@media (max-width: 680px) {
+  
+  /* 1. Centra l'intero contenitore della scheda */
   .player-header {
-    flex-wrap: nowrap !important;
+    display: flex !important;
+    flex-direction: column !important;
     align-items: center !important;
+    text-align: center !important;
+    gap: 16px !important;
+    padding: 16px !important;
+  }
+
+  /* 2. Centra il blocco ruolo + nome + info */
+  .player-title {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
     gap: 8px !important;
   }
 
-  .player-title h2 {
-    font-size: 18px !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
-  }
-
-  .player-title p {
-    display: none !important;
-  }
-
-  .player-title select,
-  .fascia-select {
-    font-size: 11px !important;
-    padding: 4px 6px !important;
-    max-width: 100px !important;
-  }
-
-  .actions {
-    flex-wrap: nowrap !important;
-    gap: 4px !important;
-  }
-
-  .actions .btn {
-    font-size: 10px !important;
-    padding: 6px 8px !important;
-    white-space: nowrap !important;
-    flex-shrink: 1 !important;
-    min-width: 0 !important;
-  }
-}
-
-/* Smartphone piccolo (< 500px) */
-@media (max-width: 499px) {
-  .player-header {
-    flex-wrap: nowrap !important;
+  /* 3. Centra il badge del ruolo */
+  .player-title .badge {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 22px !important;
+    display: flex !important;
     align-items: center !important;
-    gap: 6px !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+    margin: 0 auto 4px auto !important;
+  }
+
+  /* 4. Centra il contenitore interno di nome e squadra */
+  .player-title > div {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
   }
 
   .player-title h2 {
-    font-size: 16px !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
+    font-size: 28px !important;
+    margin: 0 !important;
+    line-height: 1.1 !important;
   }
 
   .player-title p {
-    display: none !important;
+    font-size: 13px !important;
+    margin: 0 !important;
+    opacity: 0.7 !important;
   }
 
+  /* 5. Centra la tendina delle fasce (iniettata da fascia-ui.js) */
   .player-title select,
-  .fascia-select {
-    font-size: 10px !important;
-    padding: 3px 5px !important;
-    max-width: 80px !important;
+  .player-title .fascia-select {
+    width: 80% !important;
+    max-width: 250px !important;
+    text-align: center !important;
+    text-align-last: center !important;
+    margin: 8px auto 0 auto !important;
+    padding: 10px !important;
+    font-size: 14px !important;
   }
 
+  /* 6. Pulsanti: i primi due a tutta larghezza, gli ultimi due di fianco */
   .actions {
-    flex-wrap: nowrap !important;
-    gap: 3px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 10px !important;
   }
 
-  .actions .btn {
-    font-size: 9px !important;
-    padding: 5px 6px !important;
-    white-space: nowrap !important;
-    flex-shrink: 1 !important;
-    min-width: 0 !important;
+  /* Primi due pulsanti (Torna al listone e Watchlist) */
+  .actions .btn:nth-child(1),
+  .actions .btn:nth-child(2) {
+    width: 80% !important;
+    max-width: 300px !important;
+    flex-basis: 100% !important; /* Forza a occupare l'intera riga */
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 14px !important;
+    font-size: 15px !important;
+  }
+
+  /* Ultimi due pulsanti (Matita ed Elimina) */
+  .actions .btn:nth-child(3),
+  .actions .btn:nth-child(4) {
+    width: 38% !important; /* Si dividono lo spazio rimanente */
+    max-width: 140px !important;
+    flex-basis: auto !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 12px !important;
+    font-size: 14px !important;
   }
 }
