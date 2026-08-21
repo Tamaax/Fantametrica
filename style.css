@@ -2360,7 +2360,7 @@ body.sidebar-collapsed main {
 /* si rimpiccioliscono, non vanno a capo     */
 /* ========================================= */
 
-/* Tablet (700-992px) */
+/* Tablet (700-1550px) */
 @media (max-width: 1550px) and (min-width: 700px) {
   .player-header {
     flex-wrap: nowrap !important;
@@ -2399,82 +2399,111 @@ body.sidebar-collapsed main {
   }
 }
 
-/* Smartphone grande (500-699px) */
-@media (max-width: 699px) and (min-width: 500px) {
+/* ========================================= */
+/* MOBILE (< 700px): Layout colonna          */
+/* ========================================= */
+@media (max-width: 699px) {
+  
+  /* Header della scheda giocatore */
+  #view-player .player-header,
   .player-header {
-    flex-wrap: nowrap !important;
-    align-items: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    padding: 16px !important;
+  }
+
+  /* Sezione nome e badge */
+  #view-player .player-title,
+  .player-title {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100% !important;
     gap: 8px !important;
   }
 
+  #view-player .player-title .badge,
+  .player-title .badge {
+    margin-bottom: 4px !important;
+  }
+
+  #view-player .player-title h2,
   .player-title h2 {
-    font-size: 18px !important;
+    font-size: 28px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #view-player .player-title p,
+  .player-title p {
+    font-size: 14px !important;
+    margin: 0 !important;
+    opacity: 0.8;
+  }
+
+  /* TENDINA DELLA FASCIA: visibile e sotto il nome */
+  #view-player .player-title select,
+  #view-player select.fascia-select,
+  .player-title select,
+  select.fascia-select {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    max-width: 200px !important;
+    margin-top: 8px !important;
+    padding: 10px 12px !important;
+    font-size: 14px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+    color: white !important;
+  }
+
+  /* Pulsanti in colonna */
+  #view-player .actions,
+  .player-header .actions,
+  .actions {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    gap: 10px !important;
+    margin-top: 8px !important;
+  }
+
+  /* Tutti i pulsanti della stessa larghezza */
+  #view-player .actions .btn,
+  .actions .btn,
+  #view-player .player-header button,
+  .player-header button {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+    white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
-    white-space: nowrap !important;
   }
 
-  .player-title p {
+  /* Bottone "Elimina dal listone" - rosso */
+  #view-player .btn-delete-player,
+  .btn-delete-player {
+    background: rgba(255, 69, 58, 0.15) !important;
+    border: 1px solid rgba(255, 69, 58, 0.4) !important;
+    color: #ff453a !important;
+  }
+
+  /* Nascondi sezione "COMPRA ALL'ASTA" se non dovrebbe esserci */
+  #view-player .auction-section,
+  #view-player [class*="auction"],
+  #view-player [class*="compra"],
+  #view-player [class*="acquisto"] {
     display: none !important;
-  }
-
-  .player-title select,
-  .fascia-select {
-    font-size: 11px !important;
-    padding: 4px 6px !important;
-    max-width: 100px !important;
-  }
-
-  .actions {
-    flex-wrap: nowrap !important;
-    gap: 4px !important;
-  }
-
-  .actions .btn {
-    font-size: 10px !important;
-    padding: 6px 8px !important;
-    white-space: nowrap !important;
-    flex-shrink: 1 !important;
-    min-width: 0 !important;
-  }
-}
-
-/* Smartphone piccolo (< 500px) */
-@media (max-width: 499px) {
-  .player-header {
-    flex-wrap: nowrap !important;
-    align-items: center !important;
-    gap: 6px !important;
-  }
-
-  .player-title h2 {
-    font-size: 16px !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
-  }
-
-  .player-title p {
-    display: none !important;
-  }
-
-  .player-title select,
-  .fascia-select {
-    font-size: 10px !important;
-    padding: 3px 5px !important;
-    max-width: 80px !important;
-  }
-
-  .actions {
-    flex-wrap: nowrap !important;
-    gap: 3px !important;
-  }
-
-  .actions .btn {
-    font-size: 9px !important;
-    padding: 5px 6px !important;
-    white-space: nowrap !important;
-    flex-shrink: 1 !important;
-    min-width: 0 !important;
   }
 }
