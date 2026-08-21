@@ -2360,8 +2360,8 @@ body.sidebar-collapsed main {
 /* si rimpiccioliscono, non vanno a capo     */
 /* ========================================= */
 
-/* Tablet (750-992px) */
-@media (max-width: 1500px) and (min-width: 711px) {
+/* Tablet (700-992px) */
+@media (max-width: 1500px) and (min-width: 700px) {
   .player-header {
     flex-wrap: nowrap !important;
     align-items: center !important;
@@ -2399,8 +2399,8 @@ body.sidebar-collapsed main {
   }
 }
 
-/* Smartphone orizzontale e piccolo (< 710px) */
-@media (max-width: 710px) {
+/* Smartphone orizzontale e piccolo (< 700px) */
+@media (max-width: 699px) {
   #view-player .player-title h2 {
     font-size: 28px !important;
   }
