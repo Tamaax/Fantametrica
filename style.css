@@ -2356,71 +2356,125 @@ body.sidebar-collapsed main {
 .fb-6 { color: #9aa6ba; background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.18); }
 
 /* ========================================= */
-/* SCHEDA GIOCATORE: Layout Tablet e Smartphone */
+/* SCHEDA GIOCATORE: Pulsanti e tendina      */
+/* si rimpiccioliscono, non vanno a capo     */
 /* ========================================= */
-@media (max-width: 992px) {
-  
-  /* Contenitore principale: divide in due blocchi */
+
+/* Tablet (700-992px) */
+@media (max-width: 1550px) and (min-width: 700px) {
   .player-header {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
-    gap: 24px !important;
-    padding: 10px 0 !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 12px !important;
   }
 
-  /* BLOCCO SINISTRO: Ruolo, Nome, Squadra, Tenda */
   .player-title {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    flex: 1 1 300px !important;
-    gap: 4px !important;
-  }
-
-  .player-title .badge {
-    margin-bottom: 4px !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
   }
 
   .player-title h2 {
-    margin: 0 !important;
-    font-size: 26px !important;
-    line-height: 1.2 !important;
+    font-size: 22px !important;
+  }
+
+  .player-title select,
+  .fascia-select {
+    font-size: 12px !important;
+    padding: 6px 8px !important;
+    max-width: 140px !important;
+  }
+
+  .actions {
+    flex-wrap: nowrap !important;
+    gap: 6px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .actions .btn {
+    font-size: 12px !important;
+    padding: 8px 10px !important;
+    white-space: nowrap !important;
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
+  }
+}
+
+/* Smartphone grande (500-699px) */
+@media (max-width: 699px) and (min-width: 500px) {
+  .player-header {
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  .player-title h2 {
+    font-size: 18px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
   }
 
   .player-title p {
-    margin: 0 0 8px 0 !important;
-    font-size: 14px !important;
-    opacity: 0.8;
+    display: none !important;
   }
 
-  /* Tenda delle fasce: posizionata sotto il nome con un piccolo spazio */
   .player-title select,
   .fascia-select {
-    margin-top: 8px !important;
-    width: auto !important;
-    max-width: 160px !important;
-    font-size: 13px !important;
+    font-size: 11px !important;
+    padding: 4px 6px !important;
+    max-width: 100px !important;
   }
 
-  /* BLOCCO DESTRO: Pulsanti in colonna */
   .actions {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
-    gap: 10px !important; /* Spazio tra i pulsanti */
-    flex: 1 1 200px !important;
+    flex-wrap: nowrap !important;
+    gap: 4px !important;
   }
 
-  /* Stile uniforme per i pulsanti */
   .actions .btn {
-    width: auto !important;
-    min-width: 180px !important; /* Li rende della stessa larghezza per allinearli */
-    text-align: left !important;
-    justify-content: flex-start !important;
-    margin: 0 !important;
+    font-size: 10px !important;
+    padding: 6px 8px !important;
+    white-space: nowrap !important;
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
+  }
+}
+
+/* Smartphone piccolo (< 500px) */
+@media (max-width: 499px) {
+  .player-header {
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 6px !important;
+  }
+
+  .player-title h2 {
+    font-size: 16px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  .player-title p {
+    display: none !important;
+  }
+
+  .player-title select,
+  .fascia-select {
+    font-size: 10px !important;
+    padding: 3px 5px !important;
+    max-width: 80px !important;
+  }
+
+  .actions {
+    flex-wrap: nowrap !important;
+    gap: 3px !important;
+  }
+
+  .actions .btn {
+    font-size: 9px !important;
+    padding: 5px 6px !important;
+    white-space: nowrap !important;
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
   }
 }

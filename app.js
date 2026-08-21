@@ -736,14 +736,24 @@ sortPlayers = function(a, b) {
 };
 
 function init() {
-  navButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      showView(button.dataset.view);
+  console.log("=== INIT START ===");
+  
+  // Setup navigation buttons
+  const buttons = document.querySelectorAll(".nav-btn");
+  console.log("Trovati", buttons.length, "pulsanti");
+  
+  buttons.forEach((button) => {
+    button.addEventListener("click", function() {
+      const viewName = this.getAttribute("data-view");
+      console.log("Click su:", viewName);
+      showView(viewName);
     });
   });
 
+  // Setup search
+  const searchInput = document.getElementById("searchInput");
   if (searchInput) {
-    searchInput.addEventListener("input", () => {
+    searchInput.addEventListener("input", function() {
       if (currentView !== "players") {
         showView("players");
       } else {
@@ -752,29 +762,11 @@ function init() {
     });
   }
 
-  // --- RIPRISTINO VISTA AL F5 ---
-  const savedView = sessionStorage.getItem("fc_last_view");
-  const savedPlayerId = sessionStorage.getItem("fc_last_player");
-
-  if (savedView === "player" && savedPlayerId) {
-    const player = getPlayerById(Number(savedPlayerId));
-    if (player) {
-      selectedPlayerId = Number(savedPlayerId);
-      showView("player", savedPlayerId);
-      return;
-    } else {
-      sessionStorage.removeItem("fc_last_player");
-      showView("players");
-      return;
-    }
-  }
-
-  if (savedView && savedView !== "dashboard") {
-    showView(savedView);
-    return;
-  }
-
+  // SEMPRE Dashboard all'avvio - nessun ripristino
+  console.log("Vado su Dashboard");
   showView("dashboard");
+  
+  console.log("=== INIT END ===");
 }
 
 init();
