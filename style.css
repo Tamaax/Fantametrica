@@ -2361,7 +2361,7 @@ body.sidebar-collapsed main {
 /* ========================================= */
 
 /* Tablet (700-1550px) */
-@media (max-width: 1550px) and (min-width: 1025px) {
+@media (max-width: 1550px) and (min-width: 971px) {
   .player-header {
     flex-wrap: nowrap !important;
     align-items: center !important;
@@ -2404,7 +2404,7 @@ body.sidebar-collapsed main {
 /* ========================================= */
 
 /* Tablet verticale e smartphone (< 1024px) */
-@media (max-width: 1024px) {
+@media (max-width: 970px) {
   
   #view-player .player-header,
   .player-header {
