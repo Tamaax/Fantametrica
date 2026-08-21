@@ -141,8 +141,7 @@
 
     section.innerHTML =
       '<div class="card" style="margin-bottom:16px;"><p class="muted" style="margin:0;line-height:1.7;">' +
-      "Fasce assegnate in base all'indice IA: 1ª ≥ 78 • 2ª 75-77 • 3ª 72-74 • 4ª 69-71 • 5ª 66-68 • 6ª 63-65 • R &lt; 63. " +
-      "Le fasce modificate manualmente hanno priorità.</p></div>" +
+      "Fasce assegnate in base all'indice Overall</p></div>" +
       '<div class="fasce-grid">' + cards + "</div>";
   }
 
