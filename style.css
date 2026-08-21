@@ -2356,75 +2356,43 @@ body.sidebar-collapsed main {
 .fb-6 { color: #9aa6ba; background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.18); }
 
 /* ========================================= */
-/* TABLET (800px - 1024px): tutto su una riga */
+/* SCHEDA GIOCATORE: Pulsanti e tendina      */
+/* si rimpiccioliscono, non vanno a capo     */
 /* ========================================= */
-@media (min-width: 800px) and (max-width: 1024px) {
-  
-  #view-player .player-header,
+
+/* Tablet (1024-1550px) */
+@media (max-width: 1550px) and (min-width: 950px) {
   .player-header {
-    display: flex !important;
-    flex-direction: row !important;
     flex-wrap: nowrap !important;
     align-items: center !important;
-    justify-content: space-between !important;
     gap: 12px !important;
   }
 
-  #view-player .player-title,
   .player-title {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    align-items: center !important;
-    flex: 1 !important;
+    flex: 1 1 auto !important;
     min-width: 0 !important;
-    gap: 10px !important;
   }
 
-  #view-player .player-title h2,
   .player-title h2 {
     font-size: 22px !important;
-    margin: 0 !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
   }
 
-  #view-player .player-title p,
-  .player-title p {
-    display: none !important;
-  }
-
-  /* Tendina fascia compatta */
-  #view-player .player-title select,
-  #view-player select.fascia-select,
   .player-title select,
-  select.fascia-select {
-    display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    max-width: 120px !important;
-    padding: 6px 8px !important;
+  .fascia-select {
     font-size: 12px !important;
-    margin: 0 !important;
+    padding: 6px 8px !important;
+    max-width: 140px !important;
   }
 
-  /* Pulsanti su una riga */
-  #view-player .actions,
-  .player-header .actions,
   .actions {
-    display: flex !important;
-    flex-direction: row !important;
     flex-wrap: nowrap !important;
-    align-items: center !important;
     gap: 6px !important;
     flex-shrink: 0 !important;
   }
 
-  #view-player .actions .btn,
   .actions .btn {
+    font-size: 12px !important;
     padding: 8px 10px !important;
-    font-size: 11px !important;
     white-space: nowrap !important;
     flex-shrink: 1 !important;
     min-width: 0 !important;
@@ -2432,9 +2400,11 @@ body.sidebar-collapsed main {
 }
 
 /* ========================================= */
-/* SMARTPHONE (< 800px): layout in colonna   */
+/* MOBILE & TABLET VERTICALE: Layout colonna */
 /* ========================================= */
-@media (max-width: 799px) {
+
+/* Tablet verticale e smartphone (< 950px) */
+@media (max-width: 949px) {
   
   #view-player .player-header,
   .player-header {
@@ -2443,6 +2413,7 @@ body.sidebar-collapsed main {
     align-items: flex-start !important;
     gap: 16px !important;
     padding: 16px !important;
+    width: 100% !important;
   }
 
   #view-player .player-title,
@@ -2456,8 +2427,9 @@ body.sidebar-collapsed main {
 
   #view-player .player-title h2,
   .player-title h2 {
-    font-size: 28px !important;
+    font-size: 32px !important;
     margin: 0 !important;
+    padding: 0 !important;
   }
 
   #view-player .player-title p,
@@ -2467,7 +2439,7 @@ body.sidebar-collapsed main {
     opacity: 0.8;
   }
 
-  /* Tendina fascia sotto il nome */
+  /* TENDINA FASCIA: sempre visibile sotto il nome */
   #view-player .player-title select,
   #view-player select.fascia-select,
   .player-title select,
@@ -2476,10 +2448,16 @@ body.sidebar-collapsed main {
     visibility: visible !important;
     opacity: 1 !important;
     width: 100% !important;
-    max-width: 200px !important;
+    max-width: 250px !important;
     margin-top: 8px !important;
-    padding: 10px 12px !important;
-    font-size: 14px !important;
+    padding: 12px 16px !important;
+    font-size: 15px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 10px !important;
+    color: white !important;
+    appearance: auto !important;
+    -webkit-appearance: auto !important;
   }
 
   /* Pulsanti in colonna */
@@ -2490,15 +2468,66 @@ body.sidebar-collapsed main {
     flex-direction: column !important;
     align-items: flex-start !important;
     width: 100% !important;
-    gap: 10px !important;
+    gap: 12px !important;
+    margin-top: 8px !important;
+  }
+
+  /* Tutti i pulsanti larghezza piena */
+  #view-player .actions .btn,
+  .actions .btn,
+  #view-player .player-header button,
+  .player-header button {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 14px 18px !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    border-radius: 12px !important;
+  }
+}
+
+/* Smartphone orizzontale e piccolo (< 768px) */
+@media (max-width: 768px) {
+  #view-player .player-title h2 {
+    font-size: 28px !important;
+  }
+
+  #view-player .player-title select,
+  select.fascia-select {
+    padding: 10px 14px !important;
+    font-size: 14px !important;
+    max-width: 200px !important;
   }
 
   #view-player .actions .btn,
   .actions .btn {
-    width: 100% !important;
-    max-width: 100% !important;
     padding: 12px 16px !important;
     font-size: 14px !important;
-    text-align: left !important;
+  }
+}
+
+/* Smartphone molto piccolo (< 500px) */
+@media (max-width: 500px) {
+  #view-player .player-title h2 {
+    font-size: 24px !important;
+  }
+
+  #view-player .player-title select,
+  select.fascia-select {
+    padding: 8px 12px !important;
+    font-size: 13px !important;
+    max-width: 180px !important;
+  }
+
+  #view-player .actions .btn,
+  .actions .btn {
+    padding: 10px 14px !important;
+    font-size: 13px !important;
   }
 }
