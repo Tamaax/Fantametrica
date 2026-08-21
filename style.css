@@ -2354,3 +2354,59 @@ body.sidebar-collapsed main {
 .fb-4 { color: #bf5af2; background: rgba(191, 90, 242, 0.12); border-color: rgba(191, 90, 242, 0.35); }
 .fb-5 { color: #ff9f0a; background: rgba(255, 159, 10, 0.12); border-color: rgba(255, 159, 10, 0.35); }
 .fb-6 { color: #9aa6ba; background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.18); }
+
+/* ========================================= */
+/* SCHEDA GIOCATORE: layout su tablet e smartphone */
+/* (nome + fascia + pulsanti sulla stessa riga) */
+/* ========================================= */
+@media (max-width: 992px) {
+  .player-header {
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  .player-title {
+    flex: 1 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .player-title h2 {
+    font-size: 18px !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* Nasconde "Portiere • Roma" su tablet/smartphone per fare spazio */
+  .player-title p {
+    display: none !important; 
+  }
+
+  .player-title select {
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+    max-width: 90px !important;
+    font-size: 11px !important;
+    padding: 4px 6px !important;
+  }
+
+  .actions {
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .actions .btn {
+    padding: 6px 8px !important;
+    font-size: 11px !important;
+    white-space: nowrap !important;
+  }
+}
