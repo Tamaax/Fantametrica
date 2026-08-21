@@ -140,22 +140,7 @@
         }
       });
 
-      const lockIcon = document.createElement("span");
-      lockIcon.className = "fascia-manual-tag";
-      lockIcon.innerHTML = " 🔒";
-      lockIcon.title = "Modifica salvata in memoria";
-      lockIcon.style.cssText = "font-size:10px; opacity:0.7; margin-left:4px; cursor:help;";
-
       subtitle.appendChild(select);
-      subtitle.appendChild(lockIcon);
-
-      if (player.fasciaRaw) {
-        const rawSpan = document.createElement("span");
-        rawSpan.className = "raw-fascia-tag muted";
-        rawSpan.style.cssText = "font-size:11px; margin-left:6px; opacity:0.6;";
-        rawSpan.textContent = "(Listone: " + player.fasciaRaw + ")";
-        subtitle.appendChild(rawSpan);
-      }
     };
   }
 })();

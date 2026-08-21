@@ -5,12 +5,12 @@
   function fasciaFromIA(ia) {
     const n = Number(ia);
     if (!Number.isFinite(n)) return "R";
-    if (n >= 78) return 1;
-    if (n >= 75) return 2;
-    if (n >= 72) return 3;
-    if (n >= 69) return 4;
-    if (n >= 66) return 5;
-    if (n >= 63) return 6;
+    if (n >= 77) return 1;
+    if (n >= 74) return 2;
+    if (n >= 71) return 3;
+    if (n >= 68) return 4;
+    if (n >= 65) return 5;
+    if (n >= 62) return 6;
     return "R";
   }
 
