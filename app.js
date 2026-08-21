@@ -7,8 +7,8 @@ const DB = typeof PLAYERS !== "undefined" ? PLAYERS : [];
 let currentView = "dashboard";
 let selectedPlayerId = null;
 let roleFilter = "T";
-let sortKey = "mediaFanta";
-let sortDirection = "desc";
+let sortKey = "fascia";
+let sortDirection = "asc";
 
 const roleLabels = {
   P: "Portieri",
@@ -96,6 +96,15 @@ const viewSubtitle = document.getElementById("viewSubtitle");
 
 function showView(view) {
   currentView = view;
+  
+  // Salva la vista corrente
+  localStorage.setItem("fantacalcio_last_view", view);
+
+  // Se NON siamo nella scheda giocatore, cancella l'ID salvato
+  if (view !== "player") {
+    selectedPlayerId = null;
+    localStorage.removeItem("fantacalcio_last_player_id");
+  }
 
   document.querySelectorAll(".view").forEach((section) => {
     section.classList.remove("active");
@@ -457,7 +466,9 @@ function renderWatchlist() {
 }
 
 function openPlayer(id) {
-  selectedPlayerId = id;
+  selectedPlayerId = Number(id);
+  // Salva l'ID del giocatore corrente
+  localStorage.setItem("fantacalcio_last_player_id", selectedPlayerId);
   showView("player");
 }
 
@@ -703,6 +714,23 @@ function removeParticipant(id) {
   renderAll();
 }
 
+// Funzione helper per ordinare le fasce correttamente (R va alla fine)
+function getFasciaValue(fascia) {
+  if (fascia === "R" || fascia === "r") return 99;
+  return Number(fascia) || 99;
+}
+
+// Sovrascriviamo sortPlayers per gestire la fascia
+const originalSortPlayers = sortPlayers;
+sortPlayers = function(a, b) {
+  if (sortKey === "fascia") {
+    const valA = getFasciaValue(a.fascia);
+    const valB = getFasciaValue(b.fascia);
+    return sortDirection === "asc" ? valA - valB : valB - valA;
+  }
+  return originalSortPlayers(a, b);
+};
+
 function init() {
   navButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -720,7 +748,30 @@ function init() {
     });
   }
 
-  showView("dashboard");
+  // --- LOGICA DI RIPRISTINO ALL'AVVIO ---
+  const savedView = localStorage.getItem("fantacalcio_last_view");
+  const savedPlayerId = localStorage.getItem("fantacalcio_last_player_id");
+
+  if (savedView === "player" && savedPlayerId) {
+    // Verifica che il giocatore esista davvero nel database prima di mostrarlo
+    const player = getPlayerById(Number(savedPlayerId));
+    
+    if (player) {
+      // Il giocatore esiste: ripristina ID e vista
+      selectedPlayerId = Number(savedPlayerId);
+      showView("player");
+    } else {
+      // Il giocatore è stato eliminato o non esiste: pulisci e torna al listone
+      localStorage.removeItem("fantacalcio_last_player_id");
+      showView("players");
+    }
+  } else if (savedView && savedView !== "dashboard") {
+    // Ripristina un'altra vista (es. Giocatori, Watchlist, Asta)
+    showView(savedView);
+  } else {
+    // Default
+    showView("dashboard");
+  }
 }
 
 init();
