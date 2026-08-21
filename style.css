@@ -2355,6 +2355,50 @@ body.sidebar-collapsed main {
 .fb-5 { color: #ff9f0a; background: rgba(255, 159, 10, 0.12); border-color: rgba(255, 159, 10, 0.35); }
 .fb-6 { color: #9aa6ba; background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.18); }
 
+/* ========================================= */
+/* SCHEDA GIOCATORE: Pulsanti e tendina      */
+/* si rimpiccioliscono, non vanno a capo     */
+/* ========================================= */
+
+/* Tablet (700-992px) */
+@media (max-width: 992px) and (min-width: 700px) {
+  .player-header {
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .player-title {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  .player-title h2 {
+    font-size: 22px !important;
+  }
+
+  .player-title select,
+  .fascia-select {
+    font-size: 12px !important;
+    padding: 6px 8px !important;
+    max-width: 140px !important;
+  }
+
+  .actions {
+    flex-wrap: nowrap !important;
+    gap: 6px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .actions .btn {
+    font-size: 12px !important;
+    padding: 8px 10px !important;
+    white-space: nowrap !important;
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
+  }
+}
+
 /* Smartphone grande (500-699px) */
 @media (max-width: 699px) and (min-width: 500px) {
   .player-header {
