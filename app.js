@@ -94,16 +94,22 @@ const searchInput = document.getElementById("searchInput");
 const viewTitle = document.getElementById("viewTitle");
 const viewSubtitle = document.getElementById("viewSubtitle");
 
-function showView(view) {
+function showView(view, playerId) {
   currentView = view;
   
-  // Salva la vista corrente
-  localStorage.setItem("fantacalcio_last_view", view);
+  // Salva la vista nella sessione (sopravvive a F5)
+  sessionStorage.setItem("fc_last_view", view);
 
-  // Se NON siamo nella scheda giocatore, cancella l'ID salvato
-  if (view !== "player") {
-    selectedPlayerId = null;
-    localStorage.removeItem("fantacalcio_last_player_id");
+  // Gestione ID giocatore
+  if (view === "player") {
+    const idToSave = playerId || selectedPlayerId;
+    if (idToSave) {
+      sessionStorage.setItem("fc_last_player", String(idToSave));
+    } else {
+      sessionStorage.removeItem("fc_last_player");
+    }
+  } else {
+    sessionStorage.removeItem("fc_last_player");
   }
 
   document.querySelectorAll(".view").forEach((section) => {
@@ -467,9 +473,7 @@ function renderWatchlist() {
 
 function openPlayer(id) {
   selectedPlayerId = Number(id);
-  // Salva l'ID del giocatore corrente
-  localStorage.setItem("fantacalcio_last_player_id", selectedPlayerId);
-  showView("player");
+  showView("player", id);
 }
 
 function toggleWatchlist(id) {
@@ -748,30 +752,29 @@ function init() {
     });
   }
 
-  // --- LOGICA DI RIPRISTINO ALL'AVVIO ---
-  const savedView = localStorage.getItem("fantacalcio_last_view");
-  const savedPlayerId = localStorage.getItem("fantacalcio_last_player_id");
+  // --- RIPRISTINO VISTA AL F5 ---
+  const savedView = sessionStorage.getItem("fc_last_view");
+  const savedPlayerId = sessionStorage.getItem("fc_last_player");
 
   if (savedView === "player" && savedPlayerId) {
-    // Verifica che il giocatore esista davvero nel database prima di mostrarlo
     const player = getPlayerById(Number(savedPlayerId));
-    
     if (player) {
-      // Il giocatore esiste: ripristina ID e vista
       selectedPlayerId = Number(savedPlayerId);
-      showView("player");
+      showView("player", savedPlayerId);
+      return;
     } else {
-      // Il giocatore è stato eliminato o non esiste: pulisci e torna al listone
-      localStorage.removeItem("fantacalcio_last_player_id");
+      sessionStorage.removeItem("fc_last_player");
       showView("players");
+      return;
     }
-  } else if (savedView && savedView !== "dashboard") {
-    // Ripristina un'altra vista (es. Giocatori, Watchlist, Asta)
-    showView(savedView);
-  } else {
-    // Default
-    showView("dashboard");
   }
+
+  if (savedView && savedView !== "dashboard") {
+    showView(savedView);
+    return;
+  }
+
+  showView("dashboard");
 }
 
 init();
