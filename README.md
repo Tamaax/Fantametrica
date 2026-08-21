@@ -27,7 +27,7 @@ Fantametrica/
 │   │   ├── bug_report.md                      # Modulo per segnalare bug
 │   │   └── feature_request.md                 # Modulo per richiedere funzionalità
 │   └── pull_request_template.md               # Modulo per le Pull Request
-├── data/                                      # Dati e risorse
+├── data/                                      # Dati
 │   ├── attaccanti.js                          # Dati attaccanti
 │   ├── centrocampisti.js                      # Dati centrocampisti
 │   ├── difensori.js                           # Dati difensori
