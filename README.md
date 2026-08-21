@@ -55,6 +55,7 @@ Fantametrica/
 ├── fascia.js                                  # Script JavaScript
 ├── premium.js                                 # Script JavaScript
 ├── sidebar.js                                 # Script JavaScript
+├── state-manager.js                           # Script JavaScript
 ├── ui-fixes.js                                # Script JavaScript
 ├── watchlist-filters.js                       # Script JavaScript
 └── docs/                                      # Documentazione aggiuntiva (opzionale)
