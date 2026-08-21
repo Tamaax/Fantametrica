@@ -2361,7 +2361,7 @@ body.sidebar-collapsed main {
 /* ========================================= */
 
 /* Tablet (750-992px) */
-@media (max-width: 992px) and (min-width: 750px) {
+@media (max-width: 1500px) and (min-width: 711px) {
   .player-header {
     flex-wrap: nowrap !important;
     align-items: center !important;
@@ -2399,8 +2399,8 @@ body.sidebar-collapsed main {
   }
 }
 
-/* Smartphone orizzontale e piccolo (< 749px) */
-@media (max-width: 749px) {
+/* Smartphone orizzontale e piccolo (< 710px) */
+@media (max-width: 710px) {
   #view-player .player-title h2 {
     font-size: 28px !important;
   }
